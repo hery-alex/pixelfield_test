@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pixelfield_test/layout/layout.dart';
+import 'package:pixelfield_test/screens/sign_in/sign_in_box.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -22,7 +23,8 @@ class SignInScreen extends StatelessWidget {
                     fontWeightDelta: 400
                 )
              )),
-             const SizedBox(height: 40)
+             const SizedBox(height: 40),
+             const LoginBox()
            ],
         ),
       ),

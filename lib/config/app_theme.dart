@@ -29,6 +29,9 @@ class PixelFieldTheme {
      ),
      bodyLarge: TextStyle(
       fontSize: 16,
+     ),
+     bodyMedium: TextStyle(
+      fontSize: 12,
      )
    ); 
 

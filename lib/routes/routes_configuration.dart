@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pixelfield_test/screens/my_collection_main_screen.dart';
 import 'package:pixelfield_test/screens/sign_in/sign_in_screen.dart';
+import 'package:pixelfield_test/screens/sign_in/sing_in_provider.dart';
 import 'package:pixelfield_test/screens/welcome/welcome_screen.dart';
 
 
@@ -16,7 +17,7 @@ class RoutesConfiguration implements RouteConfig{
       case '/':
         return  const WelcomeScreen();
       case '/signIn':
-        return const SignInScreen();
+        return  SignInProvider(child:const SignInScreen());
       case '/myCollection':
         return const MyCollectionMainScreen();
       default : 

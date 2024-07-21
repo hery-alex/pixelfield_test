@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 abstract class RegexValidators{
    RegExp? regex;
@@ -17,20 +18,21 @@ mixin class SignInValidators{
   final RegExp regex = RegExp(pattern);        
 
   final validateEmail = StreamTransformer<String,String>.fromHandlers(handleData: (email,sink){
-     if(email.isEmpty || SignInValidators().regex.hasMatch(email)){
-      sink.addError('Enter a valid email');
+     log('data: $email');
+     if(email.isNotEmpty && SignInValidators().regex.hasMatch(email)){
+       sink.add(email);
      }else{
-      sink.add(email);
+       sink.addError('Enter a valid email');
      }
   });
 
 
   final validatePassword =  StreamTransformer<String, String>.fromHandlers(
       handleData: (device, sink) {
-    if (device.length > 3) {
+    if (device.length > 4) {
       sink.add(device);
     } else {
-      return sink.addError('Password must be more than 3 characters!');
+      return sink.addError('Password must be more than 4 characters!');
     }
   });
 

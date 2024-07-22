@@ -22,17 +22,17 @@ mixin class SignInValidators{
      if(email.isNotEmpty && SignInValidators().regex.hasMatch(email)){
        sink.add(email);
      }else{
-       sink.addError('Enter a valid email');
+       sink.addError('Please enter a valid email');
      }
   });
 
 
   final validatePassword =  StreamTransformer<String, String>.fromHandlers(
-      handleData: (device, sink) {
-    if (device.length > 4) {
-      sink.add(device);
+      handleData: (password, sink) {
+    if (password.length > 8) {
+      sink.add(password);
     } else {
-      return sink.addError('Password must be more than 4 characters!');
+      return sink.addError('Password must be more than 8 characters!');
     }
   });
 

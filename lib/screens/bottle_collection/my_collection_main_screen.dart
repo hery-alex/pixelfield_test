@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pixelfield_test/config/size_config.dart';
+import 'package:pixelfield_test/screens/bottle_collection/collection_list.dart';
 import 'package:pixelfield_test/screens/bottle_collection/collection_top_bar.dart';
 
 class MyCollectionMainScreen extends StatelessWidget {
@@ -14,7 +15,8 @@ class MyCollectionMainScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CollectionTopBar()
+          CollectionTopBar(),
+          Expanded(child: CollectionList()),
         ],
       ),
     );

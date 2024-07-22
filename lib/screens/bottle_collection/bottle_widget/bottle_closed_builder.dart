@@ -9,7 +9,9 @@ class BottleClosedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color:Theme.of(context).colorScheme.primary,
+      decoration: BoxDecoration(
+       color:Theme.of(context).colorScheme.primary,
+      ),
       child: Column(
         children: [
            Container(

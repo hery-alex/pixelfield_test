@@ -13,8 +13,8 @@ class PixelFieldTheme {
     onPrimary: Colors.white, 
     primaryContainer: Color(0xffD49A00),
     secondary: Color(0xff899194), 
+    onSecondary: Color(0xffE7E9EA), 
     //
-    onSecondary: Color(0xff0B1519), 
     error: Color(0xff0B1519), 
     onError: Color(0xff0B1519)
     );

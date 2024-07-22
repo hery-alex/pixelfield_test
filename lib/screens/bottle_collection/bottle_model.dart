@@ -3,6 +3,7 @@ class BottleModel{
 
    String? bottleName;  
    int? batchNo;
+   String? collection;
    BottleDetailsModel? bottleDetails;
    BottleTastingNotes? tastingNotes;
    BottleHistory?  history;
@@ -11,6 +12,7 @@ class BottleModel{
 BottleModel({
   this.bottleName,
   this.batchNo,
+  this.collection,
   this.bottleDetails,
   this.tastingNotes,
   this.history
@@ -20,6 +22,7 @@ BottleModel({
  BottleModel.fromJson(Map<String,dynamic> json)
   : bottleName = json['bottleName'],
     batchNo = int.parse(json['batchNo']!),
+    collection = json['collection'], 
     bottleDetails =  BottleDetailsModel.fromJson(json['details']!),
     tastingNotes = BottleTastingNotes.fromJson(json['tastingNotes']!),
     history = BottleHistory.fromJson(json['history']!);

@@ -2,6 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:pixelfield_test/config/size_config.dart';
 import 'package:pixelfield_test/screens/bottle_collection/bottle_widget/bottle_closed_builder.dart';
+import 'package:pixelfield_test/screens/bottle_collection/bottle_widget/bottle_open_builder.dart';
 import 'package:pixelfield_test/screens/bottle_collection/collection_provider.dart';
 
 class CollectionList extends StatelessWidget {
@@ -32,13 +33,13 @@ class CollectionList extends StatelessWidget {
                         closedColor: Colors.transparent,
                         openColor: Colors.transparent,
                         transitionType: ContainerTransitionType.fade,
-                        transitionDuration:const Duration(seconds: 1),
+                        transitionDuration:const Duration(milliseconds: 500),
                         closedElevation: 0,
                         closedBuilder: (context, action) {
-                          return BottleClosedWidget(bottleModel: collectionBottles.data[index],);
+                          return BottleClosedWidget(bottleModel: collectionBottles.data[index]);
                         },
                         openBuilder: (context,action){
-                            return  SizedBox();
+                            return  BottleOpenWidget(bottleModel: collectionBottles.data[index]);
                         }
                       );
           

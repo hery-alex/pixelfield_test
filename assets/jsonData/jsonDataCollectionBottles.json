@@ -4,6 +4,7 @@
        {
          "bottleName":"Talisker 18 Year Old",
          "batchNo" : "2504",
+         "collection": "Genesis Collection",
          "details" : {
             "distilery":"text",
             "region" : "text",
@@ -74,6 +75,7 @@
        {
         "bottleName":"Talisker 15 Year Old",
         "batchNo" : "2124",
+        "collection": "Genesis Collection",
         "details" : {
            "distilery":"text",
            "region" : "text",
@@ -144,6 +146,7 @@
       {
         "bottleName":"La Gavulin ",
         "batchNo" : "1004",
+        "collection": "Gavulin Collection",
         "details" : {
            "distilery":"text",
            "region" : "text",
@@ -214,6 +217,7 @@
       {
         "bottleName":"Chivas Royal ",
         "batchNo" : "3591",
+        "collection": "Chivas Collection",
         "details" : {
            "distilery":"text",
            "region" : "text",
@@ -284,6 +288,7 @@
       {
         "bottleName":"Talisker Simple",
         "batchNo" : "4321",
+        "collection": "Scottish Distillery",
         "details" : {
            "distilery":"text",
            "region" : "text",

@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pixelfield_test/screens/sign_in/sign_in_email_password_validators.dart';
@@ -23,7 +22,7 @@ Function(String) get addEmail => _emailController.sink.add;
 Function(String) get addPassword => _passwordController.sink.add;
 
 Stream<Map<String,String>> get submitValues => Rx.combineLatest([loginEmail,loginPassword],(values){
-  log('value $values');
+
     return {
       "email" :values[0],
       "password":values[1]

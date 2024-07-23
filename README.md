@@ -21,7 +21,7 @@
 
 ## Getting Started
 
-- Routing: -> Using named routes under the PageRouteBuilder to navigate around different screens inside the application alson having transition animation between screens (Slide Transition ) (
+- Routing: -> Using named routes under then PageRouteBuilder to navigate around different screens inside the application alson having transition animation between screens (Slide Transition ) (
      See: main.dart
         routes_configuration.dart
 )
@@ -35,4 +35,9 @@
                              -> Collection Tab -> Bring data from json with the same Bloc Pattern RxDart and Inherited Widget
                                                -> Creating gridview for products 
                                                -> Using animations as OpenContainer to make Transition to product page 
-                             -> Product page -> design and details,history,tasting notes                               
+                             -> Product page -> design and details,history,tasting notes and button to add to collection which will put them in local storage
+
+- Splash Screen -> Android 12 and above doesn't support background Image only color plus the dimensions of logo not appropiate so doesn't look perfect but looks good on Ios and Android under 12 
+ 
+ 
+- Local Storage to store bottles and will show them when offline (updates UI automatically)

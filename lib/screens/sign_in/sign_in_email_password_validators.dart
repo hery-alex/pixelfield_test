@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 abstract class RegexValidators{
    RegExp? regex;
@@ -18,7 +17,7 @@ mixin class SignInValidators{
   final RegExp regex = RegExp(pattern);        
 
   final validateEmail = StreamTransformer<String,String>.fromHandlers(handleData: (email,sink){
-     log('data: $email');
+    
      if(email.isNotEmpty && SignInValidators().regex.hasMatch(email)){
        sink.add(email);
      }else{

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter/services.dart';
 import 'package:localstorage/localstorage.dart';
@@ -48,14 +47,11 @@ class JsonRepository extends Repository{
             if(model.bottleName == null && model.batchNo == null ){
                   itemsToStorage.add(json.encode(bottleModel.toMap()));
                   localStorage.setItem('collectionList', json.encode(itemsToStorage) );
-                  log('added');
                   return true;
             }else{
-                  log('not added');
                   return false;
             }
     }else{
-       log('added');
        List<String> itemsToStorage = [];
        itemsToStorage.add(json.encode(bottleModel.toMap()));
        localStorage.setItem('collectionList', json.encode(itemsToStorage) );

@@ -28,15 +28,17 @@ class BottleClosedWidget extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                padding: const EdgeInsets.only(left:10,right: 10),
-                child: Text.rich(
-                  TextSpan(
-                    text: bottleModel.bottleName,
-                    style:Theme.of(context).textTheme.headlineSmall?.apply(
-                        color: Theme.of(context).colorScheme.onPrimary,
-                    )
-                )),
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.only(left:10,right: 10),
+                  child: Text.rich(
+                    TextSpan(
+                      text: bottleModel.bottleName,
+                      style:Theme.of(context).textTheme.headlineSmall?.apply(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                      )
+                  )),
+                ),
               ),
             ],
           ),

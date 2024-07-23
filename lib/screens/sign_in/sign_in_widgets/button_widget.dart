@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:pixelfield_test/screens/sign_in/sing_in_provider.dart';
 
@@ -11,7 +9,6 @@ class SubmitButtonSignIn extends StatelessWidget {
     return StreamBuilder<Object>(
       stream: SignInProvider.of(context)!.singInBloc.submitValues,
       builder: (context, AsyncSnapshot validButton) {
-           log('validButton:  ${validButton.data}');
         return  ElevatedButton(
                   style: ButtonStyle(
                     elevation: WidgetStateProperty.all<double>(0.0),

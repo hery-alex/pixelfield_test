@@ -37,7 +37,7 @@ class TabForDetails extends StatelessWidget {
                 ),
                 tabs: const [
                 Tab(text:'Details'),
-                Tab(text:'Tasting Notes'),
+                Tab(text:'Tasting'),
                 Tab( text:'History'),
                 ],
               ),

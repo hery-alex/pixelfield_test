@@ -40,4 +40,4 @@
 - Splash Screen -> Android 12 and above doesn't support background Image only color plus the dimensions of logo not appropiate so doesn't look perfect but looks good on Ios and Android under 12 
  
  
-- Local Storage to store bottles and will show them when offline (updates UI automatically)
+- Local Storage to store bottles and will show them when offline (updates UI automatically) -> When online will bring data from Api(Json) and show them. When clicking on product you have the button to add to collection which will add them to local storage. If internet connection is dropped than the list will update with the ones that had been stored , when connection is back up will bring back data from APi(json)

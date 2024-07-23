@@ -26,6 +26,8 @@ dependencies:
   rxdart: ^0.28.0
   font_awesome_flutter: ^10.7.0
   animations: ^2.0.11
+  connectivity_plus: ^6.0.3
+  localstorage: ^5.0.0
 
 dev_dependencies:
   flutter_test:

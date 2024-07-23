@@ -1,7 +1,6 @@
-import 'dart:convert';
-import 'dart:developer';
 
-import 'package:flutter/services.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:pixelfield_test/repository/json_repository.dart';
 import 'package:pixelfield_test/screens/bottle_collection/bottle_model.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -13,21 +12,33 @@ class CollectionBloc{
 
 
 final _collectionController = BehaviorSubject<List<BottleModel>>();
-
+final Repository repository = JsonRepository();
 
 Stream<List<BottleModel>> get collection => _collectionController.stream;
 
 
+
 getCollectionData() async{
-  log('got here');
-final String response = await rootBundle.loadString('assets/jsonData/jsonDataCollectionBottles.json');
-final data = await json.decode(response);
-List<BottleModel> tempBottleList = [];
-  for(var singleData in data['bottles']){
-      tempBottleList.add(BottleModel.fromJson(singleData));
+  final Connectivity connectivity = Connectivity();
+  List<ConnectivityResult> result = await connectivity.checkConnectivity();
+  if(result.contains(ConnectivityResult.mobile) || result.contains(ConnectivityResult.wifi)){
+    List<BottleModel> resultList = await repository.getDataFromApi();
+    _collectionController.sink.add(resultList);
+  }else if(result.contains(ConnectivityResult.none)){
+       List<BottleModel> resultListLocal = await repository.getDataFromLocalStorage();
+        _collectionController.sink.add(resultListLocal);
   }
-  log('data collection $tempBottleList');
-  _collectionController.sink.add(tempBottleList);
+
+  connectivity.onConnectivityChanged.listen((List<ConnectivityResult> data) async{
+    if(data.contains(ConnectivityResult.mobile) || data.contains(ConnectivityResult.wifi)){
+        List<BottleModel> resultListApi = await repository.getDataFromApi();
+       _collectionController.sink.add(resultListApi);
+    }else if(data.contains(ConnectivityResult.none)){
+       List<BottleModel> resultListLocal = await repository.getDataFromLocalStorage();
+        _collectionController.sink.add(resultListLocal);
+    }
+  });
+  
 }
 
  

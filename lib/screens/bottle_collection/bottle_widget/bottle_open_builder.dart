@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pixelfield_test/assets/assets_images.dart';
 import 'package:pixelfield_test/config/size_config.dart';
 import 'package:pixelfield_test/screens/bottle_collection/bottle_model.dart';
+import 'package:pixelfield_test/screens/bottle_collection/bottle_widget/open_builder_widgets/bottom_button_to_add_to_storage.dart';
 import 'package:pixelfield_test/screens/bottle_collection/bottle_widget/open_builder_widgets/details_box.dart';
 import 'package:pixelfield_test/screens/bottle_collection/bottle_widget/open_builder_widgets/top_row_genuine.dart';
 import 'package:pixelfield_test/screens/bottle_collection/bottle_widget/open_builder_widgets/top_row_with_x.dart';
@@ -35,6 +36,8 @@ class BottleOpenWidget extends StatelessWidget {
                const SizedBox(height: 40),
                DetailsBox(bottleModel:bottleModel),
                const SizedBox(height: 40),
+               BottomButtonToAddToStorage(bottleModel: bottleModel),
+               const SizedBox(height: 40)
             ],
           ),
         ),

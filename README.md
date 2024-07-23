@@ -11,6 +11,14 @@
 - Use BLoC pattern for state management
 - Use Git for version control - after you finish, share the link with us
 
+## Another information
+
+- Use any packages from pub.dev, but explain, why you used it
+- Track your time on test task and send this info to us
+- If you find anything in templates, that you wish to change, send to us this info and write, why you think, that your way is better
+- Is not necessary to create all templates, but we need to see how flow of the app is implemented (but at least `My collection` + `Details` are required)
+- Animations are welcome but not required
+
 ## Getting Started
 
 - Routing: -> Using named routes under the PageRouteBuilder to navigate around different screens inside the application alson having transition animation between screens (Slide Transition ) (

@@ -26,6 +26,18 @@ BottleModel({
     bottleDetails =  BottleDetailsModel.fromJson(json['details']!),
     tastingNotes = BottleTastingNotes.fromJson(json['tastingNotes']!),
     history = BottleHistory.fromJson(json['history']!);
+
+
+   Map<String,dynamic> toMap(){
+    final Map<String,dynamic> data = <String,dynamic>{};
+    data['bottleName'] = bottleName;
+    data['batchNo'] = '$batchNo';
+    data['collection'] = collection;
+    data['details'] = bottleDetails?.toMap();
+    data['tastingNotes'] = tastingNotes?.toMap();
+    data['history'] = history?.toMap();
+    return data;
+   } 
 }
 
 
@@ -40,7 +52,16 @@ BottleHistory.fromJson(List<dynamic> json){
   for(var singleHistory in json ){
          tempHistoryEvents.add(BottleHistoryEvents.fromJson(singleHistory));
     }
+   historyEvents = tempHistoryEvents; 
 }
+
+List<Map<String,dynamic>> toMap(){
+    final List<Map<String,dynamic>> data = [];
+    for(var singleHistory in historyEvents as List<BottleHistoryEvents> ){
+          data.add(singleHistory.toMap());
+    }
+    return data;
+   }   
 
 
 }
@@ -63,6 +84,13 @@ class BottleHistoryEvents{
      label = json['label'],
      description = json['description'];
 
+   Map<String,dynamic> toMap(){
+    final Map<String,dynamic> data = <String,dynamic>{};
+    data['title'] = historyTitle;
+    data['label'] = label;
+    data['description'] = description;
+    return data;
+   }   
 
 
 }
@@ -102,6 +130,29 @@ class BottleTastingNotes{
     }
     finish = tempListFinish;
   }
+
+  Map<String,dynamic> toMap(){
+    final Map<String,dynamic> data = <String,dynamic>{};
+    data['tastingPerson'] = tastingPerson;
+    List<Map<String,dynamic>> tempListNose = [];
+    for(var singleNose in nose as List<BottleTastingNotesDescription>){
+         tempListNose.add(singleNose.toMap());
+    }
+    data['nose'] = tempListNose;
+    List<Map<String,dynamic>> tempListPalate = [];
+    for(var singlePalate in palate as List<BottleTastingNotesDescription>){
+         tempListPalate.add(singlePalate.toMap());
+    }
+    data['palate'] = tempListPalate;
+     List<Map<String,dynamic>> tempListFinish = [];
+    for(var singleFinish in finish as List<BottleTastingNotesDescription>){
+         tempListFinish.add(singleFinish.toMap());
+    }
+    data['finish'] = tempListFinish;
+
+    return data;
+   }
+  
 }
 
 class BottleTastingNotesDescription{
@@ -114,6 +165,12 @@ class BottleTastingNotesDescription{
 
    BottleTastingNotesDescription.fromJson(Map<String,dynamic> json)
    : description = json['description'];
+
+   Map<String,dynamic> toMap(){
+    final Map<String,dynamic> data = <String,dynamic>{};
+    data['description'] = description;
+    return data;
+   } 
 }
 
 
@@ -158,6 +215,23 @@ class BottleDetailsModel{
       avb = json['avb'],
       size = json['size'],
       finish = json['finish'];
+
+
+   Map<String,dynamic> toMap(){
+    final Map<String,dynamic> data = <String,dynamic>{};
+    data['distilery'] = distilery;
+    data['region'] = region;
+    data['country'] = country;
+    data['type'] = type;
+    data['ageStatement'] = ageStatement;
+    data['filled'] = filled;
+    data['bootled'] = bottled;
+    data['caskNumber'] = caskNumber;
+    data['avb'] = avb;
+    data['size'] = size;
+    data['finish'] = finish;
+    return data;
+   }   
 
 
 }
